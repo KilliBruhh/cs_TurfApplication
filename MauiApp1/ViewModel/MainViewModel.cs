@@ -18,6 +18,9 @@ namespace MauiApp1.ViewModel
         [ObservableProperty]
         string text;
 
+        [ObservableProperty]
+        string errorText;
+
 
         // ICommand changed to RelayCommand
         [RelayCommand]
@@ -29,6 +32,7 @@ namespace MauiApp1.ViewModel
             Items.Add(text);
             // Add new Turf
             Text = string.Empty;
+            checkInput(text);
         }
 
         [RelayCommand]
@@ -60,6 +64,35 @@ namespace MauiApp1.ViewModel
         async Task Edit(String s)
         {
             await Shell.Current.GoToAsync($"{nameof(EditPage)}?Text={s}");
+        }
+
+        public void checkInput(String input)
+        {
+            // Use array to put in the Drinks and check if input is contained in array
+            // Array must be saved in Database?
+
+            string[] drinks = { "Cola", "Beer", "Sprite" };
+            bool valid = false;
+
+            foreach(string x in drinks)
+            {
+                if (input.Contains(x))
+                {
+                    // Correct
+                    valid = true;
+                }
+            }
+
+            if(valid)
+            {
+                // True
+            }
+            else
+            {
+                // Wrong Input               
+                ErrorText = "Error: Wrong input";
+            }
+     
         }
 
 
