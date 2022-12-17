@@ -23,7 +23,7 @@
         <Button Text="Add Page"
   
                 FontSize="22"
-                Grid.Row="3"
+                Grid.Row="4"
                 Grid.ColumnSpan="2"
                 HorizontalOptions="CenterAndExpand"
                 VerticalOptions="End"
@@ -39,6 +39,11 @@
                FontSize="20"
                />
 
+        <Label TextColor="Red"
+               Text="{Binding ErrorText}" 
+               Grid.Row="3"
+               Grid.ColumnSpan="3"
+               />
 
         <Button Text="Add"
                 Command="{Binding AddCommand}"
