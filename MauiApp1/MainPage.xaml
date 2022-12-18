@@ -6,98 +6,32 @@
              x:DataType="viewmodel:MainViewModel"
             >
 
-    <Grid RowDefinitions="100, Auto, *"
-          ColumnDefinitions=".75*, .25*"
-          Padding="10"
-          RowSpacing="10"
-          ColumnSpacing="10">
+    <StackLayout Spacing="5" Padding="15" Margin="10">
+        <VerticalStackLayout IsVisible="false">
+            <Label Text="ID" FontSize="Medium" IsEnabled="False" />
+            <Entry Text="{Binding TurfInfo.Id,Mode=TwoWay}" FontSize="Medium" IsEnabled="False" />
+            <BoxView HeightRequest="0.5" Color="Gray" />
+        </VerticalStackLayout>
 
-
-        
-        <Image Grid.ColumnSpan="2"
-               Source="TurfLogo.png" 
-
-               />
-
-
-        <Button Text="Add Page"
-  
-                FontSize="22"
-                Grid.Row="4"
-                Grid.ColumnSpan="2"
-                HorizontalOptions="CenterAndExpand"
-                VerticalOptions="End"
-                />
-
-
-
-
-        <Entry Placeholder="Enter Turf"
-               Text="{Binding Text}"
-               Grid.Row="1" 
-               ClearButtonVisibility="WhileEditing"
-               FontSize="20"
-               />
-
-        <Label TextColor="Red"
-               Text="{Binding ErrorText}" 
-               Grid.Row="3"
-               Grid.ColumnSpan="3"
-               />
-
-        <Button Text="Add"
-                Command="{Binding AddCommand}"
-                Grid.Row="1"
-                Grid.Column="1" 
-                FontSize="18"/>
-
-        <CollectionView Grid.Row="2" Grid.ColumnSpan="2"
-                        ItemsSource="{Binding Items}"
-                        SelectionMode="None">
-
-            <CollectionView.ItemTemplate>
-                <DataTemplate x:DataType="{x:Type x:String}">
-                    <SwipeView>
-                        <SwipeView.RightItems>
-                            <SwipeItems>
-                                <SwipeItem Text="Delete"
-                                           BackgroundColor="Red"
-                                           Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:MainViewModel}}, Path=DeleteCommand}"
-                                           CommandParameter="{Binding .}"/>
-
-                            </SwipeItems>
-                        </SwipeView.RightItems>
-                        <SwipeView.LeftItems>
-                            <SwipeItems>
-                                <SwipeItem Text="Edit"
-                                           BackgroundColor="Orange"
-                                           Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:MainViewModel}}, Path=EditCommand}"
-                                           CommandParameter="{Binding .}" />
-                            </SwipeItems>
-                        </SwipeView.LeftItems>
-                        <Grid Padding="0,5">
-                            <Frame>
-                                <Frame.GestureRecognizers>
-                                    <TapGestureRecognizer
-                                         Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:MainViewModel}}, Path=TapCommand}"
-                                         CommandParameter="{Binding .}" />
-
-                                </Frame.GestureRecognizers>
-                                <Label Text="{Binding .}"
-                                   FontSize="18"/>
-                            </Frame>
-                        </Grid>
-
-                    </SwipeView>
-                </DataTemplate>
-
-            </CollectionView.ItemTemplate>
-        </CollectionView>
-
-
+        <VerticalStackLayout>
+            <Label Text="Drink" FontSize="Medium" />
+            <Entry Text="{Binding TurfInfo.Drink,Mode=TwoWay}" FontSize="Medium" />
+            <BoxView HeightRequest="0.5" Color="Gray" />
+            
+        </VerticalStackLayout>
         
 
-    </Grid>
-    
-    
+        <VerticalStackLayout>
+            <Label Text="Price" FontSize="Medium" />
+            <Entry Text="{Binding TurfInfo.Price,Mode=TwoWay}" FontSize="Medium" />
+            <BoxView HeightRequest="0.5" Color="Gray" />
+        </VerticalStackLayout>
+
+        <VerticalStackLayout>
+            <Button Text="Add Turf" Command="{Binding AddTurfCommand}" HorizontalOptions="FillAndExpand" />
+        </VerticalStackLayout>
+
+        
+    </StackLayout>
+
 </ContentPage>
