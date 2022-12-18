@@ -9,7 +9,7 @@ using WebAPi.Models;
 
 namespace WebAPi.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/[turfsController]")]
     [ApiController]
     public class turfsController : ControllerBase
     {
