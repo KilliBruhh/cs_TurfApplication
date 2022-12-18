@@ -89,11 +89,22 @@ namespace MauiApp1.Services
 
         }
 
-        public Task<IEnumerable<TurfInfo>> GetProductAsync()
+        public async Task<IEnumerable<TurfInfo>> GetProductAsync()
         {
             // throw new NotImplementedException();
-            // var t
-            return null;
+
+            var turfList = new List<TurfInfo>();
+
+            HttpClient client = new HttpClient();
+            string url = baseUrl + "/turfs";
+            client.BaseAddress = new Uri(url);
+            HttpResponseMessage responseMessage = await client.GetAsync("");
+
+            if (responseMessage.IsSuccessStatusCode)
+            {
+                turfList = await responseMessage.Content.ReadFromJsonAsync<List<TurfInfo>>();
+            }
+            return await Task.FromResult(turfList);
         }
 
 
