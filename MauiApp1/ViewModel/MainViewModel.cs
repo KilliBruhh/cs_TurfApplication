@@ -9,7 +9,9 @@ namespace MauiApp1.ViewModel
 {
     public partial class MainViewModel
     {
+
         public TurfInfo TurfInfo { get; set; }
+
 
         public MainViewModel()
         {
@@ -24,5 +26,7 @@ namespace MauiApp1.ViewModel
             var turf = TurfInfo;
             await turfService.AddUpdateTurfAsync(turf);                       
         }
+
+
     }
 }

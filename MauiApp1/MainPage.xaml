@@ -20,6 +20,7 @@
             
         </VerticalStackLayout>
         
+
         <VerticalStackLayout>
             <Label Text="Price" FontSize="Medium" />
             <Entry Text="{Binding TurfInfo.Price,Mode=TwoWay}" FontSize="Medium" />
@@ -29,6 +30,7 @@
         <VerticalStackLayout>
             <Button Text="Add Turf" Command="{Binding AddTurfCommand}" HorizontalOptions="FillAndExpand" />
         </VerticalStackLayout>
+
         
     </StackLayout>
 
