@@ -7,7 +7,7 @@
             >
 
     <StackLayout Spacing="5" Padding="15" Margin="10">
-        <VerticalStackLayout>
+        <VerticalStackLayout IsVisible="false">
             <Label Text="ID" FontSize="Medium" IsEnabled="False" />
             <Entry Text="{Binding TurfInfo.Id,Mode=TwoWay}" FontSize="Medium" IsEnabled="False" />
             <BoxView HeightRequest="0.5" Color="Gray" />
