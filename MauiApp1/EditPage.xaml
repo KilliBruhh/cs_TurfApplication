@@ -3,22 +3,32 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MauiApp1.EditPage"
              Title="EditPage">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to Teh Edit page"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" 
-            Margin="10"
-            FontSize="18"/>
+   <StackLayout Spacing="5" Padding="15" Margin="10">
+        <VerticalStackLayout IsVisible="false">
+            <Label Text="ID" FontSize="Medium" IsEnabled="False" />
+            <Entry Text="{Binding TurfInfo.Id,Mode=TwoWay}" FontSize="Medium" IsEnabled="False" />
+            <BoxView HeightRequest="0.5" Color="Gray" />
+        </VerticalStackLayout>
 
-        <Entry Placeholder="Enter Turf"                         
-               ClearButtonVisibility="WhileEditing"
-               FontSize="20"
-               />
+        <VerticalStackLayout>
+            <Label Text="Drink" FontSize="Medium" />
+            <Entry Text="{Binding TurfInfo.Drink,Mode=TwoWay}" FontSize="Medium" />
+            <BoxView HeightRequest="0.5" Color="Gray" />
 
-        <Button Text="Add"
-                Command="{Binding AddCommand}"                 
-                FontSize="18"/>
-        
-    </VerticalStackLayout>
+        </VerticalStackLayout>
+
+
+        <VerticalStackLayout>
+            <Label Text="Price" FontSize="Medium" />
+            <Entry Text="{Binding TurfInfo.Price,Mode=TwoWay}" FontSize="Medium" />
+            <BoxView HeightRequest="0.5" Color="Gray" />
+        </VerticalStackLayout>
+
+        <VerticalStackLayout>
+            <Button Text="Add Turf" Command="{Binding EditTurfCommand}" HorizontalOptions="FillAndExpand" />
+        </VerticalStackLayout>
+
+    
+
+    </StackLayout>
 </ContentPage>

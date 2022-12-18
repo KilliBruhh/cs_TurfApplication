@@ -12,6 +12,6 @@ namespace MauiApp1.Services
         Task<bool> AddUpdateTurfAsync(TurfInfo turf);
         Task<bool> DeleteTurfAsync(int id);
         Task<TurfInfo> GetTurfAsync(int id);
-        Task<IEnumerable<TurfInfo>> GetProductAsync();
+        Task<IEnumerable<TurfInfo>> GetTurfAsync();
     }
 }

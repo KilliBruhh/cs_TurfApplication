@@ -8,7 +8,7 @@ namespace MauiApp1.Models
 {
     public class TurfInfo
     {
-        public long Id { get; set; }
+        public int Id { get; set; }
         public string? Drink { get; set; }
         public int Price { get; set; }
     }

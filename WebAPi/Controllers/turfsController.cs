@@ -20,6 +20,10 @@ namespace WebAPi.Controllers
             _context = context;
         }
 
+        public turfsController()
+        {
+        }
+
         // GET: api/turfs
         [HttpGet]
         public async Task<ActionResult<IEnumerable<turf>>> GetTurfItems()

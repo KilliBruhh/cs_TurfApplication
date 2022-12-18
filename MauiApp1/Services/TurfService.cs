@@ -89,7 +89,7 @@ namespace MauiApp1.Services
 
         }
 
-        public async Task<IEnumerable<TurfInfo>> GetProductAsync()
+        public async Task<IEnumerable<TurfInfo>> GetTurfAsync()
         {
             // throw new NotImplementedException();
 
