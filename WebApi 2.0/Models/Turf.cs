@@ -1,6 +1,6 @@
-﻿namespace WebAPi.Models
+﻿namespace WebApi_2._0.Models
 {
-    public class turf
+    public class Turf
     {
         public long Id { get; set; }
         public string? Drink { get; set; }
