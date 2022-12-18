@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MauiApp1.Models
 {
-    internal class TurfInfo
+    public class TurfInfo
     {
         public long Id { get; set; }
         public string? Drink { get; set; }

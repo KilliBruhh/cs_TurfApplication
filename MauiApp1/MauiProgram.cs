@@ -20,11 +20,11 @@ public static class MauiProgram
 		builder.Services.AddSingleton<MainViewModel>();
 
 		// will be Created and destroyed everytime it gets loaded and unloaded
-		builder.Services.AddTransient<DetailPage>();
-		builder.Services.AddTransient<DetailViewModel>();
+		builder.Services.AddSingleton<DetailPage>();
+		builder.Services.AddSingleton<DetailViewModel>();
 
-		builder.Services.AddTransient<EditPage>();
-		builder.Services.AddTransient<EditViewModel>();
+		builder.Services.AddSingleton<EditPage>();
+		builder.Services.AddSingleton<EditViewModel>();
 
 		return builder.Build();
 	}
